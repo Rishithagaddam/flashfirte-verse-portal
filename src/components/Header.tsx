@@ -1,6 +1,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 interface HeaderProps {
   currentWorld: number;
@@ -8,6 +15,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentWorld }) => {
   const worlds = ['Ideation', 'Speaking', 'Design', 'Gaming'];
+  
+  const subEvents = [
+    { name: 'Ideathon', path: '/ideathon', description: 'Innovation Lab' },
+    { name: 'Tech Talk', path: '/tech-talk', description: 'Speaking Arena' },
+    { name: 'UI/UX Workshop', path: '/design-workshop', description: 'Design Studio' },
+    { name: 'Gaming Tournament', path: '/gaming', description: 'Gaming Arena' },
+  ];
   
   return (
     <motion.header 
@@ -48,6 +62,31 @@ const Header: React.FC<HeaderProps> = ({ currentWorld }) => {
               {world}
             </motion.a>
           ))}
+          
+          {/* Sub-events Navigation */}
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-gray-400 hover:text-white bg-transparent">
+                  Events
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-80">
+                    {subEvents.map((event) => (
+                      <a
+                        key={event.name}
+                        href={event.path}
+                        className="block p-3 rounded-lg hover:bg-iron-orange-500/10 transition-colors"
+                      >
+                        <h4 className="text-white font-medium mb-1">{event.name}</h4>
+                        <p className="text-gray-400 text-sm">{event.description}</p>
+                      </a>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
 
         {/* Mobile menu indicator */}

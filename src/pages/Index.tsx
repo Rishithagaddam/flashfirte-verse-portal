@@ -9,7 +9,7 @@ import IdeationWorld from '@/components/worlds/IdeationWorld';
 import SpeakingWorld from '@/components/worlds/SpeakingWorld';
 import DesignWorld from '@/components/worlds/DesignWorld';
 import GamingWorld from '@/components/worlds/GamingWorld';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Calendar } from 'lucide-react';
 
 const Index = () => {
   const [currentWorld, setCurrentWorld] = useState(0);
@@ -85,12 +85,33 @@ const Index = () => {
             </h1>
             
             <motion.p 
-              className="text-2xl md:text-3xl text-iron-orange-300 mb-8 font-light tracking-wider"
+              className="text-2xl md:text-3xl text-iron-orange-300 mb-6 font-light tracking-wider"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
             >
               One Event. Many Realities.
+            </motion.p>
+
+            {/* Event Dates */}
+            <motion.div
+              className="flex items-center justify-center gap-4 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 1 }}
+            >
+              <Calendar className="w-6 h-6 text-iron-orange-400" />
+              <span className="text-xl text-white font-medium">28 & 29 December 2024</span>
+            </motion.div>
+
+            {/* Organizer Info */}
+            <motion.p
+              className="text-lg text-gray-300 mb-8 font-light"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9, duration: 1 }}
+            >
+              Organized by <span className="text-iron-orange-400 font-medium">Computer Society of India, VNRVJIET</span>
             </motion.p>
             
             <motion.div
@@ -123,7 +144,7 @@ const Index = () => {
       {worlds.map((world, index) => {
         const WorldComponent = world.component;
         return (
-          <section key={index} className="min-h-screen relative">
+          <section key={index} className="min-h-screen relative" id={`world-${index}`}>
             <WorldTransition 
               isActive={currentWorld === index}
               worldIndex={index}
