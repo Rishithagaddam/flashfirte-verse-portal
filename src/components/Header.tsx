@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
   currentWorld: number;
@@ -20,11 +19,15 @@ const Header: React.FC<HeaderProps> = ({ currentWorld }) => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-iron-orange-400 to-iron-orange-600 rounded-lg flex items-center justify-center">
-            <span className="text-black font-bold text-xl font-['Orbitron']">FF</span>
+          <div className="w-12 h-12 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/5093018b-abe9-4b16-812c-efeae660ab8c.png" 
+              alt="FlashForte Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
-            <h1 className="text-2xl font-['Orbitron'] font-bold text-white">FlashFirte</h1>
+            <h1 className="text-2xl font-['Orbitron'] font-bold text-white">FlashForte</h1>
             <p className="text-sm text-iron-orange-400">One Event. Many Realities.</p>
           </div>
         </div>
@@ -46,11 +49,6 @@ const Header: React.FC<HeaderProps> = ({ currentWorld }) => {
             </motion.a>
           ))}
         </nav>
-
-        {/* CTA Button */}
-        <Button className="cyberpunk-button hidden sm:block">
-          <span>Register</span>
-        </Button>
 
         {/* Mobile menu indicator */}
         <div className="md:hidden">

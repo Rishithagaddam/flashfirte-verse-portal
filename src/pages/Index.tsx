@@ -68,19 +68,20 @@ const Index = () => {
             transition={{ duration: 1 }}
             className="mb-8"
           >
-            {/* Logo placeholder */}
-            <div className="w-32 h-32 mx-auto mb-8 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-iron-orange-400 to-iron-orange-600 rounded-full animate-pulse-glow"></div>
-              <div className="absolute inset-2 bg-black rounded-full flex items-center justify-center">
-                <span className="text-iron-orange-500 font-bold text-2xl font-['Orbitron']">FF</span>
-              </div>
+            {/* Logo */}
+            <div className="w-48 h-48 mx-auto mb-8 relative">
+              <img 
+                src="/lovable-uploads/5093018b-abe9-4b16-812c-efeae660ab8c.png" 
+                alt="FlashForte Logo" 
+                className="w-full h-full object-contain animate-pulse-glow"
+              />
             </div>
 
             <h1 className="text-8xl md:text-9xl font-['Orbitron'] font-black mb-4 relative">
               <span className="bg-gradient-to-r from-iron-orange-400 via-iron-orange-500 to-iron-orange-600 bg-clip-text text-transparent neon-text">
                 FLASH
               </span>
-              <span className="text-white neon-text">FIRTE</span>
+              <span className="text-white neon-text">FORTE</span>
             </h1>
             
             <motion.p 
@@ -151,7 +152,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
           >
-            Join FlashFirte and explore limitless possibilities across multiple digital dimensions. 
+            Join FlashForte and explore limitless possibilities across multiple digital dimensions. 
             Whether you're here to innovate, speak, design, or game - your reality awaits.
           </motion.p>
           
@@ -161,9 +162,6 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
           >
-            <Button className="cyberpunk-button text-xl px-16 py-8">
-              <span>Register Now</span>
-            </Button>
             <Button variant="outline" className="border-iron-orange-500/50 text-iron-orange-400 hover:bg-iron-orange-500/10 text-xl px-12 py-8">
               View Schedule
             </Button>
